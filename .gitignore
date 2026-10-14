@@ -1,0 +1,19 @@
+# Reference projects linked from the local workspace.
+/php-signals
+/py-signals
+
+# Dart package artifacts.
+.dart_tool/
+.packages
+pubspec.lock
+build/
+coverage/
+doc/api/
+*.snapshot
+
+# Editor and operating-system files.
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db

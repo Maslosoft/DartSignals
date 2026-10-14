@@ -1,0 +1,26 @@
+name: Dart
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        sdk: ['3.6.2', stable]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: ${{ matrix.sdk }}
+      - run: dart pub get
+      - run: dart format --output=none --set-exit-if-changed lib bin test example
+      - run: dart analyze --fatal-infos
+      - run: dart test
+      - run: dart run example/maslosoft_signals_example.dart
+      - run: dart pub publish --dry-run

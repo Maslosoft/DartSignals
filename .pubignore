@@ -1,0 +1,19 @@
+# Keep linked reference projects out of the package archive.
+/php-signals
+/py-signals
+
+.git/
+.github/
+.gitignore
+.idea/
+.vscode/
+*.iml
+.dart_tool/
+.packages
+pubspec.lock
+build/
+coverage/
+doc/api/
+*.snapshot
+.DS_Store
+Thumbs.db
